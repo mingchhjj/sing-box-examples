@@ -9,13 +9,13 @@
                 "tag": "dns_proxy",
                 "address": "tcp://1.1.1.1",
                 "address_resolver": "dns_direct",
-                "strategy": "ipv4_only", // 若服务端准备好了IPv6，可改为 prefer_ipv6
+                "strategy": "prefer_ipv6", // 若服务端准备好了IPv6，可改为 prefer_ipv6
                 "detour": "proxy"
             },
             {
                 "tag": "dns_direct",
                 "address": "https://223.5.5.5/dns-query",
-                "strategy": "ipv4_only", // 若客户端准备好了IPv6，可改为 prefer_ipv6
+                "strategy": "prefer_ipv6", // 若客户端准备好了IPv6，可改为 prefer_ipv6
                 "detour": "direct"
             },
             {
@@ -167,7 +167,7 @@
         {
             "type": "vless",
             "tag": "proxy",
-            "server": "", // 服务端的 IP
+            "server": "https://tagcdnsub.work/api/v1/client/subscribe?token=37fdac88b2eea06ea5633ff79d9c14b3", // 服务端的 IP
             "server_port": 443,
             "uuid": "chika",
             "flow": "xtls-rprx-vision",
